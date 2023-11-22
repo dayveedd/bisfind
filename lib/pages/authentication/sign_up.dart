@@ -140,7 +140,7 @@ class _SignUpState extends State<SignUp> {
                           focusedBorder: UnderlineInputBorder()),
                     ),
                     SizedBox(
-                      height: 130,
+                      height: 110,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [

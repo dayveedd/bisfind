@@ -126,7 +126,7 @@ class _StoreReviewsState extends State<StoreReviews> {
                                   height: 10,
                                 ),
                                 SizedBox(
-                                    width: 270,
+                                    width: 200,
                                     child: Text(
                                       storeReview[index]['review'],
                                       style: GoogleFonts.mulish(

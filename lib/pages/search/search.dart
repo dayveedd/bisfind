@@ -34,16 +34,19 @@ class _SaerchBusinessState extends State<SaerchBusiness> {
           ),
         ),
       ),
-      body: Center(
-        child: SizedBox(
-          width: 350,
-          child: Text(text, style: GoogleFonts.mulish(
-            textStyle: TextStyle(
-              color: Colors.yellow,
-              fontSize: 16,
-              fontWeight: FontWeight.w700
-            )
-          ),),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: SizedBox(
+            width: 350,
+            child: Text(text, style: GoogleFonts.mulish(
+              textStyle: TextStyle(
+                color: Colors.yellow,
+                fontSize: 16,
+                fontWeight: FontWeight.w700
+              )
+            ),),
+          ),
         ),
       ),
     );
