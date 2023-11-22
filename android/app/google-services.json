@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "537574073916",
+    "project_id": "bisfind-e42e6",
+    "storage_bucket": "bisfind-e42e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537574073916:android:834b00ca8c7bfbf5024539",
+        "android_client_info": {
+          "package_name": "com.example.bisfind"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJz6SRT69QohW6EENQxVLEOC4Ow3Oc3dk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
