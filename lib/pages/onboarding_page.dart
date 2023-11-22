@@ -35,7 +35,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Color.fromARGB(255, 53, 52, 52),
         body: SingleChildScrollView(
           child: SafeArea(
             child: Padding(
@@ -69,7 +69,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                                           child: Text(carouselData[i]['text'],
                                               textAlign: TextAlign.center,
                                              style: GoogleFonts.libreBaskerville(textStyle: TextStyle(
-                                                  color: Color(0xFF020202),
+                                                  color: Colors.white,
                                                   fontSize: 15,
                                                   height: 1.7,                                                 
                                                   fontWeight:
@@ -94,7 +94,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                                                 borderRadius: BorderRadius.circular(
                                                     3), // Adjust the border radius as needed
                                                 color: _currentIndex == i
-                                                    ? Color.fromARGB(255, 48, 47, 47)
+                                                    ? Colors.yellow
                                                     : Colors.grey,
                                               ),
                                             ),
@@ -269,8 +269,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     borderRadius: BorderRadius.circular(15),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 48, 47, 47),
-                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.yellow,
+                        foregroundColor: Colors.black,
                         minimumSize: Size(double.infinity, 50),
                       ),
                       onPressed: () {

@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:bisfind/layout.dart';
 import 'package:bisfind/pages/authentication/auth_function/auth_function.dart';
 import 'package:bisfind/pages/authentication/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -16,13 +17,17 @@ class _SignInState extends State<SignIn> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isVisibility = false;
-  @override
+
+    @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 53, 52, 52),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images/business7.webp'), fit: BoxFit.cover)),
+                image: AssetImage('images/business7.webp'),
+                fit: BoxFit.cover,
+                opacity: 0.3)),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Center(
@@ -32,7 +37,7 @@ class _SignInState extends State<SignIn> {
               child: Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.yellow.withOpacity(0.5),
                     borderRadius: BorderRadius.circular(12)),
                 child: Form(
                     child: Column(
@@ -47,8 +52,9 @@ class _SignInState extends State<SignIn> {
                     SizedBox(
                       height: 40,
                     ),
-                    TextField(
+                    TextFormField(                     
                       controller: _emailController,
+                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           hintText: 'email',
                           enabledBorder: UnderlineInputBorder(
@@ -89,8 +95,18 @@ class _SignInState extends State<SignIn> {
                                   foregroundColor: Colors.white,
                                   minimumSize: Size(170, 50)),
                               onPressed: () {
-                                loginUser(_emailController.text,
-                                    _passwordController.text);
+                                if (_emailController.text.isNotEmpty ||
+                                    _passwordController.text.isNotEmpty) {
+                                  loginUser(_emailController.text,
+                                      _passwordController.text);
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => LayOutPage()));
+                                } else {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                          content: Text(
+                                              'Fields should not be empty')));
+                                }
                               },
                               child: Text('Sign in')),
                         ],

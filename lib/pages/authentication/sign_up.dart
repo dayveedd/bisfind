@@ -4,6 +4,7 @@ import 'package:bisfind/pages/authentication/auth_function/auth_function.dart';
 import 'package:bisfind/pages/authentication/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:bisfind/resources/auth_method.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -15,14 +16,45 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
   bool isVisibility = false;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _nameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    // void registerUser() async {
+    //   String resp = await AuthMethods().registerUser(
+    //       email: _emailController.text,
+    //       password: _passwordController.text,
+    //       name: _nameController.text);
+
+    //   if (resp == 'success') {
+    //     Navigator.of(context)
+    //         .push(MaterialPageRoute(builder: (context) => SignIn()));
+    //   }
+    // }
+
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 53, 52, 52),
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images/business7.webp'), fit: BoxFit.cover)),
+                image: AssetImage('images/business7.webp'),
+                fit: BoxFit.cover,
+                opacity: 0.3)),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Center(
@@ -32,7 +64,7 @@ class _SignUpState extends State<SignUp> {
               child: Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.yellow.withOpacity(0.5),
                     borderRadius: BorderRadius.circular(12)),
                 child: Form(
                     child: Column(
@@ -47,7 +79,14 @@ class _SignUpState extends State<SignUp> {
                     SizedBox(
                       height: 30,
                     ),
-                    TextField(
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your name';
+                        }
+                        return null;
+                      },
+                      controller: _nameController,
                       decoration: InputDecoration(
                           hintText: 'name',
                           enabledBorder: UnderlineInputBorder(
@@ -60,8 +99,15 @@ class _SignUpState extends State<SignUp> {
                     SizedBox(
                       height: 30,
                     ),
-                    TextField(
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your email';
+                        }
+                        return null;
+                      },
                       controller: _emailController,
+                      keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           hintText: 'email',
                           enabledBorder: UnderlineInputBorder(),
@@ -70,8 +116,15 @@ class _SignUpState extends State<SignUp> {
                     SizedBox(
                       height: 30,
                     ),
-                    TextField(
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        return null;
+                      },
                       controller: _passwordController,
+                      obscureText: true,
                       decoration: InputDecoration(
                           hintText: 'password',
                           suffixIcon: IconButton(
@@ -98,8 +151,19 @@ class _SignUpState extends State<SignUp> {
                                   foregroundColor: Colors.white,
                                   minimumSize: Size(170, 50)),
                               onPressed: () {
-                                createAccount(_emailController.text,
-                                    _passwordController.text);
+                                if (_emailController.text.isNotEmpty ||
+                                    _passwordController.text.isNotEmpty ||
+                                    _nameController.text.isNotEmpty) {
+                                  createAccount(_emailController.text,
+                                      _passwordController.text);
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => SignIn()));
+                                } else {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                          content: Text(
+                                              'Fields should not be empty')));
+                                }
                               },
                               child: Text('Sign up')),
                         ],

@@ -72,7 +72,7 @@ class _StoreDetailsState extends State<StoreDetails> {
                             Text(widget.storeName,
                                 style: GoogleFonts.mulish(
                                     textStyle: TextStyle(
-                                        fontSize: 30,
+                                        fontSize: 25,
                                         fontWeight: FontWeight.w700,
                                         color: Colors.yellow))),
                             //SizedBox(height: 10,),

@@ -14,6 +14,7 @@ com.example.bisfind.app-rs-12 C:\Users\HP\StudioProjects\bisfind\build\app\gener
 com.example.bisfind.app-mergeDebugResources-13 C:\Users\HP\StudioProjects\bisfind\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
 com.example.bisfind.app-mergeDebugResources-14 C:\Users\HP\StudioProjects\bisfind\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
 com.example.bisfind.app-merged_res-15 C:\Users\HP\StudioProjects\bisfind\build\app\intermediates\merged_res\debug
-com.example.bisfind.app-packaged_res-16 C:\Users\HP\StudioProjects\bisfind\build\firebase_auth\intermediates\packaged_res\debug
-com.example.bisfind.app-packaged_res-17 C:\Users\HP\StudioProjects\bisfind\build\firebase_core\intermediates\packaged_res\debug
-com.example.bisfind.app-packaged_res-18 C:\Users\HP\StudioProjects\bisfind\build\path_provider_android\intermediates\packaged_res\debug
+com.example.bisfind.app-packaged_res-16 C:\Users\HP\StudioProjects\bisfind\build\cloud_firestore\intermediates\packaged_res\debug
+com.example.bisfind.app-packaged_res-17 C:\Users\HP\StudioProjects\bisfind\build\firebase_auth\intermediates\packaged_res\debug
+com.example.bisfind.app-packaged_res-18 C:\Users\HP\StudioProjects\bisfind\build\firebase_core\intermediates\packaged_res\debug
+com.example.bisfind.app-packaged_res-19 C:\Users\HP\StudioProjects\bisfind\build\path_provider_android\intermediates\packaged_res\debug
