@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:bisfind/pages/search/search.dart';
 import 'package:bisfind/pages/store_details/store_location.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,23 +29,26 @@ class _StoreDetailsState extends State<StoreDetails> {
       appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 53, 52, 52),
           elevation: 0,
-          title: Container(
-            padding: EdgeInsets.all(8),
-            height: 30,
-            decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(6)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'search businesses',
-                  style: GoogleFonts.libreBaskerville(fontSize: 10),
-                ),
-                Icon(
-                  Icons.search,
-                  color: Color.fromARGB(255, 70, 70, 70),
-                )
-              ],
+          title: GestureDetector(
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SaerchBusiness())),
+            child: Container(
+              padding: EdgeInsets.all(8),
+              height: 30,
+              decoration: BoxDecoration(
+                  color: Colors.grey, borderRadius: BorderRadius.circular(6)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'search businesses',
+                    style: GoogleFonts.libreBaskerville(fontSize: 10),
+                  ),
+                  Icon(
+                    Icons.search,
+                    color: Color.fromARGB(255, 70, 70, 70),
+                  )
+                ],
+              ),
             ),
           )),
       body: Column(

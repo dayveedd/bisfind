@@ -52,6 +52,15 @@ class _StoreReviewsState extends State<StoreReviews> {
     },
   ];
 
+  void addReview(String name, String review) {
+    setState(() {
+      storeReview.add({
+        'name': name,
+        'review': review,
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -237,7 +246,13 @@ class _StoreReviewsState extends State<StoreReviews> {
                                               foregroundColor: Colors.black,
                                               minimumSize:
                                                   Size(double.infinity, 50)),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            final review =
+                                                _reviewController.text;
+                                            const name = 'User';
+                                            addReview(name, review);
+                                            Navigator.pop(context);
+                                          },
                                           child: Text('Proceed'))),
                                 )
                               ],
